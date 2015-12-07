@@ -18,6 +18,7 @@
 namespace pupiltracker {
     
     const double SQRT_2 = std::sqrt(2.0);
+    //const double SQRT_2 = std::sqrt(2.0);
     const double PI = CV_PI;
     
     namespace cvx
@@ -50,8 +51,9 @@ namespace pupiltracker {
         // 画中心叉
         inline void cross(cv::Mat& img, cv::Point2f centre, double radius, const cv::Scalar& colour, int thickness = 1, int lineType=CV_AA, int shift = 8)
         {
-            cvx::line(img, centre + cv::Point2f(-radius, -radius), centre + cv::Point2f(radius, radius), colour, thickness, lineType, shift);
-            cvx::line(img, centre + cv::Point2f(-radius, radius), centre + cv::Point2f(radius, -radius), colour, thickness, lineType, shift);
+            //cvx::line(img, centre + cv::Point2f(-radius, -radius), centre + cv::Point2f(radius, radius), colour, thickness, lineType, shift);
+            //cvx::line(img, centre + cv::Point2f(-radius, radius), centre + cv::Point2f(radius, -radius), colour, thickness, lineType, shift);
+            cv::circle(img, centre, 2, colour, lineType, shift);
         }
         inline void plus(cv::Mat& img, cv::Point2f centre, double radius, const cv::Scalar& colour, int thickness = 1, int lineType=CV_AA, int shift = 8)
         {

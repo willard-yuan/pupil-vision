@@ -39,7 +39,7 @@ float pupiltracker::cvx::histKmeans(const cv::Mat_<float>& hist, int bin_min, in
     CV_Assert( hist.rows == 1 || hist.cols == 1 && K > 0 );
     
     labels = cv::Mat_<uchar>::zeros(hist.size());
-    int nbins = hist.total();
+    int nbins = (int)hist.total();
     float binWidth = (bin_max - bin_min)/nbins;
     float binStart = bin_min + binWidth/2;
     
