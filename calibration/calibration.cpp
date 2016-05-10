@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  Hello-Eigen
-//
-//  Created by willard on 12/30/15.
-//  Copyright © 2015 wilard. All rights reserved.
-//
-
 // 输入
 // 眼睛：一维数组保存int ECoords = [xE1, yE1, xE2, yE2, ... , xE9, yE9]
 // 屏幕坐标在这里固定：int SCoords = [xScrn1, yScrn1, xScrn2, yScrn2, ..., xScrn9, yScrn9]
@@ -134,7 +126,6 @@ vector<MatrixXd> fit_poly_surface(MatrixXd cal_pt_cloud, int n=7){
     MatrixXd U = svd.matrixU();
     MatrixXd Vt = svd.matrixV();
     
-    // 确认准确
     MatrixXd w = svd.singularValues();
     
     MatrixXd InvW(n, 1);
@@ -397,7 +388,7 @@ vector<float> linearModel_lDown_rTop(MatrixXd &ES1, MatrixXd &ES2, vector<float>
     return xyS;
 }
 
-//二元二次非线性模型
+// 二元二次非线性模型
 // @归一化后的9个坐标矩阵
 // @归一化的眼睛坐标
 // @归一化的屏幕坐标
@@ -486,7 +477,7 @@ vector<float> nolinearModel(MatrixXd &cal_pt_cloud, vector<float> &xyE){
     return xyS;
 }
 
-//二元二次非线性模型
+// 二元二次非线性模型
 // @归一化后的9个坐标矩阵
 // @归一化的眼睛坐标
 // @归一化的屏幕坐标
